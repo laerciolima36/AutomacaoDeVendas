@@ -96,6 +96,7 @@
             android:gravity="center"
             android:hint="Digite a cidade"
             android:inputType="textPersonName"
+            android:text="Laercio"
             android:textColor="#000000"
             android:textColorHint="@android:color/darker_gray"
             app:layout_constraintEnd_toEndOf="parent"
