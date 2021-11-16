@@ -19,7 +19,6 @@ import static com.example.automaodevendas.MainActivity.key;
 public class Config extends AppCompatActivity {
 
     //configuracoes github
-    //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
     Button btsalvar;
     EditText editKey;
     EditText editCX;
