@@ -12,6 +12,7 @@ public class Splash extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //testando o github
+        //modificacoes do mac os
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
