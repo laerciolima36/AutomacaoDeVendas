@@ -132,8 +132,7 @@ public class SearchMain {
             myLink.setLink(link);
             myLink.setLevel(parentLink.getLevel() + 1);
 
-            if (link.contains(links.get(0).getLink()) &&
-                    (!links.contains(myLink))) {
+            if (link.contains(links.get(0).getLink()) && (!links.contains(myLink))) {
                 links.add(myLink);
             }
         }
@@ -154,7 +153,7 @@ public class SearchMain {
         while (matcher.find() == true) {
             int end = matcher.end(); //pega ultima posicao da palavra filtrada
 
-            int index = page.indexOf("m", end); //procura um sinal de < da ultima posicao da palavra filtrada e retorna a posicao
+            int index = page.indexOf("m", end); //procura a letra m da ultima posicao da palavra filtrada e retorna a posicao
 
             //if (page.substring(index - 1, index).equals("m"))
             //    index = index + 23;
