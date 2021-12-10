@@ -5,6 +5,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -40,9 +43,6 @@ public class MainActivity extends AppCompatActivity {
     TextView txtstatus;
     Button btBuscar;
 
-    List<String> DadosDoListView;
-    ArrayAdapter<String> arrayAdapter;
-
     Spinner sp;
 
     @Override
@@ -54,14 +54,13 @@ public class MainActivity extends AppCompatActivity {
         EditTipo = (EditText) findViewById(R.id.EditTipo);
         EditLocal = (EditText) findViewById(R.id.EditLocal);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-
+        btBuscar = (Button) findViewById(R.id.btBuscar);
         sp = (Spinner) findViewById(R.id.spinner);
         txtstatus = (TextView) findViewById(R.id.txtStatus);
 
         Grupos = new ArrayList<String>();
         SitesEncontrados = new ArrayList<String>();
 
-        btBuscar = (Button) findViewById(R.id.btBuscar);
 
         //TODO ADAPTADOR PARA O SPINNER (DROP DOWN LIST), ADAPTADOR SE CONECTA A FONTE DE DADOS (RESOUCES OU BANCO DE DADOS) E SETAMOS O ADAPTADOR PARA A VIEW
         ArrayAdapter<CharSequence> spadapter = ArrayAdapter.createFromResource(this, R.array.pages, android.R.layout.simple_spinner_dropdown_item);
@@ -89,6 +88,35 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    //TODO PROCEDIMENTO PARA CRIAR MENU SUSPENSO
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    //TODO VERIFICA QUAL ITEM FOI CLICADO NO MENU
+   @Override
+   public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId() == R.id.salvar) {
+            abrirArquivo();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    //TODO METODO PARA ABRIR ARQUVIO TXT
+    private void abrirArquivo() {
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.setType("application/txt");
+
+        //startActivityForResult(intent);
+        startActivity(intent);
     }
 
     //TODO INICIO DO PROGRAMA

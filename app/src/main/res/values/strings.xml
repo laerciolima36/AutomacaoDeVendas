@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Busca Grupos 1.0</string>
     <string name="txtbuscando"></string>
+    <string name="salvar_pesquisa">Salvar Pesquisa...</string>
+    <string name="abrir_pesquisa_salva">Abrir Pesquisa Salva...</string>
+    <string name="DialogSalvar">Insira o Nome do Arquivo:</string>
+    <string name="btnSalvar">Salvar</string>
+    <string name="btnCancelar">Cancelar</string>
 </resources>
